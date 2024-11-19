@@ -155,6 +155,7 @@ export const CHAIN_IDS = {
   NEAR_TESTNET: '0x18e',
   GRAVITY_ALPHA_MAINNET: '0x659',
   GRAVITY_ALPHA_TESTNET_SEPOLIA: '0x34c1',
+  ESACOIN: '0xfd6f',
 } as const;
 
 export const CHAINLIST_CHAIN_IDS_MAP = {
@@ -262,6 +263,7 @@ export const SCROLL_SEPOLIA_DISPLAY_NAME = 'Scroll Sepolia';
 export const OP_BNB_DISPLAY_NAME = 'opBNB';
 export const BERACHAIN_DISPLAY_NAME = 'Berachain Artio';
 export const METACHAIN_ONE_DISPLAY_NAME = 'Metachain One Mainnet';
+export const ESACOIN_DISPLAY_NAME = 'EsaCoin';
 
 export const infuraProjectId = process.env.INFURA_PROJECT_ID;
 export const getRpcUrl = ({
@@ -318,6 +320,7 @@ export const CURRENCY_SYMBOLS = {
   GLIMMER: 'GLMR',
   MOONRIVER: 'MOVR',
   ONE: 'ONE',
+  ESA: 'ESA',
 } as const;
 
 const CHAINLIST_CURRENCY_SYMBOLS_MAP = {
@@ -952,6 +955,20 @@ export const UNSUPPORTED_RPC_METHODS = new Set([
 export const IPFS_DEFAULT_GATEWAY_URL = 'dweb.link';
 
 export const FEATURED_RPCS: AddNetworkFields[] = [
+  {
+    chainId: CHAIN_IDS.ESACOIN,
+    name: LINEA_MAINNET_DISPLAY_NAME,
+    nativeCurrency: CURRENCY_SYMBOLS.ESA,
+    rpcEndpoints: [
+      {
+        url: `https://65.108.151.70:8545`,
+        type: RpcEndpointType.Custom,
+      },
+    ],
+    defaultRpcEndpointIndex: 0,
+    blockExplorerUrls: ['https://65.108.151.70'],
+    defaultBlockExplorerUrlIndex: 0,
+  },
   {
     chainId: CHAIN_IDS.LINEA_MAINNET,
     name: LINEA_MAINNET_DISPLAY_NAME,
